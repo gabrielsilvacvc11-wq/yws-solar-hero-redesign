@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YWS Solar • Hero Redesign</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap');
+        
+        :root {
+            --yws-green: #00A651;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Poppins', 'Inter', system_ui, sans-serif;
+            font-weight: 700;
+            line-height: 1.05;
+        }
+
+        .hero-visual {
+            filter: drop-shadow(0 25px 50px rgb(0 0 0 / 0.15));
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .hero-visual:hover {
+            transform: scale(1.02);
+        }
+
+        .section-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #00A651;
+        }
+
+        .premium-shadow {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 
+                       0 8px 10px -6px rgb(0 0 0 / 0.05);
+        }
+
+        .yws-green {
+            color: #00A651;
+        }
+
+        .btn-primary {
+            background-color: #111827;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-primary:hover {
+            background-color: #000000;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+        }
+
+        .btn-secondary {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f3f4f6;
+            transform: translateY(-1px);
+        }
+
+        .phone-shadow {
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4),
+                        0 10px 10px -6px rgb(0 0 0 / 0.3);
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .subtle-float {
+            animation: subtleFloat 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-[#00A651] rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-sun text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-3xl tracking-tighter">YWS</span>
+                        <span class="font-semibold text-3xl text-[#00A651]">Solar</span>
+                    </div>
+                </div>
+
+                <!-- Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#" class="nav-link text-gray-600 hover:text-gray-900">Início</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-gray-900">Serviços</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-gray-900">Simuladores</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-gray-900">Depoimentos</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-gray-900">Histórico</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <!-- Dark mode toggle (placeholder) -->
+                    <button class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-2xl transition-colors">
+                        <i class="fa-solid fa-moon text-lg"></i>
+                    </button>
+
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/5562999999999" 
+                       class="hidden sm:flex items-center gap-x-2.5 bg-[#00A651] hover:bg-[#008F44] transition-all text-white px-5 py-2.5 rounded-3xl text-sm font-semibold shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Fale agora</span>
+                    </a>
+
+                    <!-- Equipe -->
+                    <a href="#" 
+                       class="flex items-center gap-x-2 px-5 py-2.5 text-sm font-medium border border-gray-200 hover:bg-gray-50 rounded-3xl transition-colors">
+                        <i class="fa-solid fa-users text-gray-500"></i>
+                        <span class="hidden sm:inline">Equipe</span>
+                    </a>
+
+                    <!-- Mobile menu -->
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-gray-100 rounded-2xl">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-screen-2xl mx-auto px-6 pt-8 pb-16 lg:pt-12 lg:pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-8 xl:gap-x-12 items-center">
+            
+            <!-- Visual Column (Left) -->
+            <div class="lg:col-span-7 xl:col-span-7 relative flex justify-center lg:justify-start mb-10 lg:mb-0">
+                <div class="relative w-full max-w-[620px]">
+                    <!-- Reference Image as Visual -->
+                    <img src="docs/hero-reference.jpg" 
+                         alt="YWS Solar Hero - Design de referência com Yuri segurando celular"
+                         class="w-full rounded-[3rem] shadow-2xl border border-gray-100 hero-visual">
+                    
+                    <!-- Subtle badge overlay -->
+                    <div class="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-3xl shadow-sm border border-gray-100 flex items-center gap-x-2 text-xs font-semibold">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <span class="text-emerald-700">Design em produção</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Column (Right) -->
+            <div class="lg:col-span-5 xl:col-span-5 space-y-8">
+                
+                <!-- Location Badge -->
+                <div class="inline-flex items-center gap-x-2 bg-amber-50 text-amber-700 px-5 py-2 rounded-3xl text-sm font-semibold tracking-[0.5px]">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <span>GOIÁS • BRASIL • 2026</span>
+                </div>
+
+                <!-- Headline -->
+                <div class="space-y-3">
+                    <h1 class="heading-font text-6xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tighter font-bold">
+                        Energia solar<br>
+                        <span class="yws-green">inteligente</span><br>
+                        para o seu futuro.
+                    </h1>
+                </div>
+
+                <!-- Subheadline -->
+                <div class="max-w-md">
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Simule seu sistema em segundos.<br>
+                        Descubra quanto você pode economizar e aumente até 
+                        <span class="font-semibold text-emerald-600">30% a geração</span> com limpeza profissional.
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <!-- Primary Button -->
+                    <a href="#" 
+                       class="btn-primary flex-1 sm:flex-none justify-center items-center gap-x-3 px-8 py-4 text-white rounded-3xl font-semibold text-base flex shadow-lg">
+                        <span>Fazer simulação gratuita</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                    
+                    <!-- Secondary Button -->
+                    <a href="https://wa.me/5562999999999" 
+                       class="btn-secondary flex-1 sm:flex-none justify-center items-center gap-x-3 px-7 py-4 border border-gray-200 hover:border-gray-300 text-gray-700 rounded-3xl font-semibold text-base flex">
+                        <i class="fa-brands fa-whatsapp text-[#00A651] text-xl"></i>
+                        <span>Falar com especialista</span>
+                    </a>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="pt-4 flex items-center gap-x-4">
+                    <div class="flex -space-x-3">
+                        <img src="https://i.pravatar.cc/32?img=28" class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200" alt="">
+                        <img src="https://i.pravatar.cc/32?img=47" class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200" alt="">
+                        <img src="https://i.pravatar.cc/32?img=12" class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200" alt="">
+                    </div>
+                    <div class="text-sm">
+                        <span class="font-semibold text-gray-700">+2.847</span>
+                        <span class="text-gray-500"> simulações realizadas em sistemas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="mt-14 lg:mt-16">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                
+                <!-- Stat 1: Economia -->
+                <div class="stat-card bg-white border border-gray-100 rounded-3xl p-5 premium-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 tracking-wider">ECONOMIA MENSAL</div>
+                            <div class="mt-1 text-3xl font-semibold tabular-nums text-emerald-600">R$ 1.284</div>
+                        </div>
+                        <div class="w-11 h-11 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-piggy-bank text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat 2: Potência -->
+                <div class="stat-card bg-white border border-gray-100 rounded-3xl p-5 premium-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 tracking-wider">SISTEMA RESIDENCIAL</div>
+                            <div class="mt-1 text-3xl font-semibold tabular-nums">18,6 <span class="text-xl font-medium text-gray-400">kWp</span></div>
+                        </div>
+                        <div class="w-11 h-11 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-bolt text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat 3: Árvores -->
+                <div class="stat-card bg-white border border-gray-100 rounded-3xl p-5 premium-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 tracking-wider">ÁRVORES SALVAS</div>
+                            <div class="mt-1 text-3xl font-semibold tabular-nums">31</div>
+                        </div>
+                            <div class="w-11 h-11 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-tree text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat 4: Área -->
+                <div class="stat-card bg-white border border-gray-100 rounded-3xl p-5 premium-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 tracking-wider">ÁREA UTILIZADA</div>
+                            <div class="mt-1 text-3xl font-semibold tabular-nums">62 <span class="text-xl font-medium text-gray-400">m²</span></div>
+                        </div>
+                        <div class="w-11 h-11 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-ruler-combined text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat 5: Payback -->
+                <div class="stat-card bg-white border border-gray-100 rounded-3xl p-5 premium-shadow">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 tracking-wider">TEMPO DE RETORNO</div>
+                            <div class="mt-1 text-3xl font-semibold tabular-nums">3,8 <span class="text-xl font-medium text-gray-400">anos</span></div>
+                        </div>
+                        <div class="w-11 h-11 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-clock-rotate-left text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 flex items-center justify-center lg:justify-start gap-x-2 text-xs text-emerald-600 font-medium">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Sistema otimizado com limpeza profissional incluída</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer note for developers -->
+    <div class="max-w-screen-2xl mx-auto px-6 pb-8">
+        <div class="text-center text-[10px] text-gray-400 font-mono tracking-widest">
+            YWS SOLAR • HERO REDESIGN v1.0 • EXPERIMENTAL
+        </div>
+    </div>
+
+    <script>
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-green', '#00A651');
+        }
+        
+        function animateOnLoad() {
+            const heroContent = document.querySelector('.lg\\:col-span-5');
+            if (heroContent) {
+                heroContent.style.opacity = '0';
+                heroContent.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    heroContent.style.transition = 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }, 300);
+            }
+        }
+
+        function addKeyboardSupport() {
+            const buttons = document.querySelectorAll('a[href="#"], a[href^="https://wa.me"]');
+            buttons.forEach(btn => {
+                btn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        btn.click();
+                    }
+                });
+            });
+        }
+
+        function init() {
+            initializeTailwind();
+            animateOnLoad();
+            addKeyboardSupport();
+            
+            const logo = document.querySelector('nav .flex.items-center');
+            if (logo) {
+                logo.style.cursor = 'pointer';
+                logo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
+            
+            console.log('%c[YWS Solar] Hero Redesign carregado com sucesso.', 'color:#00A651; font-size:9px');
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
