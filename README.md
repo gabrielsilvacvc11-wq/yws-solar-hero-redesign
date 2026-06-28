@@ -16,7 +16,7 @@ O objetivo é criar uma landing page moderna, profissional e otimizada para conv
 
 A referência principal encontra-se em:
 
-docs/hero-reference.png
+docs/hero-reference.jpg
 
 Essa imagem representa a direção visual desejada.
 
